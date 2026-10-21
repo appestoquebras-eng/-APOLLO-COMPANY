@@ -112,9 +112,18 @@ export const Footer: React.FC = () => {
               CEP: {OFFICIAL_COMPANY_DATA.endereco.cep}
             </p>
 
-            <div className="pt-2 text-xs space-y-1">
+            <div className="pt-2 text-xs space-y-1.5">
               <div>
-                <span className="text-slate-400">Telefone: </span>
+                <span className="text-slate-400">WhatsApp / SP: </span>
+                <a
+                  href={`tel:${OFFICIAL_COMPANY_DATA.contato.telefoneSPClean}`}
+                  className="text-amber-400 hover:text-amber-300 font-mono tabular-nums transition-colors font-semibold"
+                >
+                  {OFFICIAL_COMPANY_DATA.contato.telefoneSP}
+                </a>
+              </div>
+              <div>
+                <span className="text-slate-400">Central Telefônica: </span>
                 <a
                   href={`tel:${OFFICIAL_COMPANY_DATA.contato.telefoneClean}`}
                   className="text-white hover:text-amber-400 font-mono tabular-nums transition-colors font-medium"

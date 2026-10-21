@@ -18,7 +18,7 @@ Endereço: ${OFFICIAL_COMPANY_DATA.endereco.logradouro}, ${OFFICIAL_COMPANY_DATA
 Bairro: ${OFFICIAL_COMPANY_DATA.endereco.bairro} - São Paulo / SP - CEP: ${OFFICIAL_COMPANY_DATA.endereco.cep}
 CNAE Principal: ${OFFICIAL_COMPANY_DATA.cnaePrincipal.codigo} - ${OFFICIAL_COMPANY_DATA.cnaePrincipal.descricao}
 E-mail: ${OFFICIAL_COMPANY_DATA.contato.email}
-Telefone: ${OFFICIAL_COMPANY_DATA.contato.telefone}`;
+Telefones: ${OFFICIAL_COMPANY_DATA.contato.telefoneSP} (SP / WhatsApp) | ${OFFICIAL_COMPANY_DATA.contato.telefone}`;
 
     navigator.clipboard.writeText(textToCopy);
     setCopied(true);
@@ -145,24 +145,39 @@ Telefone: ${OFFICIAL_COMPANY_DATA.contato.telefone}`;
             </div>
 
             {/* Official Contact Info */}
-            <div className="pt-4 border-t border-slate-800 grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
-              <div className="space-y-1">
-                <span className="text-slate-400 flex items-center gap-1">
-                  <Phone className="w-3.5 h-3.5 text-amber-400" />
-                  Telefone
-                </span>
-                <a
-                  href={`tel:${OFFICIAL_COMPANY_DATA.contato.telefoneClean}`}
-                  className="font-mono text-white hover:text-amber-400 transition-colors block font-semibold tabular-nums"
-                >
-                  {OFFICIAL_COMPANY_DATA.contato.telefone}
-                </a>
+            <div className="pt-4 border-t border-slate-800 space-y-3 text-xs">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div className="space-y-1">
+                  <span className="text-slate-400 flex items-center gap-1">
+                    <Phone className="w-3.5 h-3.5 text-emerald-400" />
+                    <span>São Paulo / WhatsApp</span>
+                  </span>
+                  <a
+                    href={`tel:${OFFICIAL_COMPANY_DATA.contato.telefoneSPClean}`}
+                    className="font-mono text-emerald-400 hover:text-emerald-300 transition-colors block font-bold tabular-nums"
+                  >
+                    {OFFICIAL_COMPANY_DATA.contato.telefoneSP}
+                  </a>
+                </div>
+
+                <div className="space-y-1">
+                  <span className="text-slate-400 flex items-center gap-1">
+                    <Phone className="w-3.5 h-3.5 text-amber-400" />
+                    <span>Central Telefônica</span>
+                  </span>
+                  <a
+                    href={`tel:${OFFICIAL_COMPANY_DATA.contato.telefoneClean}`}
+                    className="font-mono text-white hover:text-amber-400 transition-colors block font-semibold tabular-nums"
+                  >
+                    {OFFICIAL_COMPANY_DATA.contato.telefone}
+                  </a>
+                </div>
               </div>
 
-              <div className="space-y-1">
+              <div className="space-y-1 pt-1">
                 <span className="text-slate-400 flex items-center gap-1">
                   <Mail className="w-3.5 h-3.5 text-amber-400" />
-                  E-mail Oficial
+                  <span>E-mail Oficial</span>
                 </span>
                 <a
                   href={`mailto:${OFFICIAL_COMPANY_DATA.contato.email}`}

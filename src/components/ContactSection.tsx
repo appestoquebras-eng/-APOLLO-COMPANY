@@ -67,7 +67,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialService, 
   const waText = encodeURIComponent(
     `Olá, equipe Apollo Company! Meu nome é ${formData.nome || "um cliente"} da empresa ${formData.empresa || "minha empresa"}. Gostaria de solicitar um diagnóstico estratégico sobre: ${serviceName}. ${formData.mensagem ? `Observações: ${formData.mensagem}` : ""}`
   );
-  const waUrl = `https://wa.me/${OFFICIAL_COMPANY_DATA.contato.telefoneClean}?text=${waText}`;
+  const waUrl = `https://wa.me/${OFFICIAL_COMPANY_DATA.contato.telefoneSPClean}?text=${waText}`;
 
   const mailtoSubject = encodeURIComponent(`Solicitação de Diagnóstico Estratégico - ${formData.empresa || "Apollo Company"}`);
   const mailtoBody = encodeURIComponent(
@@ -99,12 +99,33 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialService, 
             {/* Direct Cards */}
             <div className="space-y-4">
               
+              {/* Telefone SP / WhatsApp */}
+              <div className="p-4 rounded-xl bg-slate-900 border border-slate-800 flex items-start gap-3.5">
+                <div className="p-2.5 rounded-lg bg-emerald-500/10 text-emerald-400 shrink-0">
+                  <Phone className="w-4 h-4" />
+                </div>
+                <div className="space-y-0.5 flex-1">
+                  <div className="text-xs text-slate-400 flex items-center justify-between">
+                    <span>São Paulo & WhatsApp Comercial</span>
+                    <span className="text-[10px] text-emerald-400 font-medium">Atendimento Rápido</span>
+                  </div>
+                  <a
+                    href={`tel:${OFFICIAL_COMPANY_DATA.contato.telefoneSPClean}`}
+                    className="text-base font-bold text-white hover:text-amber-400 font-mono tabular-nums transition-colors block"
+                  >
+                    {OFFICIAL_COMPANY_DATA.contato.telefoneSP}
+                  </a>
+                  <div className="text-[11px] text-slate-400">Ligação direta ou mensagens de WhatsApp</div>
+                </div>
+              </div>
+
+              {/* Central Telefônica */}
               <div className="p-4 rounded-xl bg-slate-900 border border-slate-800 flex items-start gap-3.5">
                 <div className="p-2.5 rounded-lg bg-amber-400/10 text-amber-400 shrink-0">
                   <Phone className="w-4 h-4" />
                 </div>
-                <div className="space-y-0.5">
-                  <div className="text-xs text-slate-400">Central Telefônica</div>
+                <div className="space-y-0.5 flex-1">
+                  <div className="text-xs text-slate-400">Central Telefônica Corporativa</div>
                   <a
                     href={`tel:${OFFICIAL_COMPANY_DATA.contato.telefoneClean}`}
                     className="text-base font-bold text-white hover:text-amber-400 font-mono tabular-nums transition-colors block"

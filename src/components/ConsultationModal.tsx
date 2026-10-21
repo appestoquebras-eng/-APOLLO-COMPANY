@@ -48,7 +48,7 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
   const waText = encodeURIComponent(
     `Olá, Apollo Company! Meu nome é ${nome || "um cliente"} da empresa ${empresa || "minha empresa"}. Gostaria de solicitar atendimento para: ${selectedSvc?.title || "Consultoria"}. ${mensagem ? `Mensagem: ${mensagem}` : ""}`
   );
-  const waUrl = `https://wa.me/${OFFICIAL_COMPANY_DATA.contato.telefoneClean}?text=${waText}`;
+  const waUrl = `https://wa.me/${OFFICIAL_COMPANY_DATA.contato.telefoneSPClean}?text=${waText}`;
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm animate-fade-in">

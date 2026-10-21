@@ -101,10 +101,10 @@ export const PaulistaLocation: React.FC = () => {
               <div className="p-4 rounded-xl bg-slate-950 border border-slate-800 space-y-1.5">
                 <div className="flex items-center gap-2 text-xs font-semibold text-amber-400">
                   <Phone className="w-3.5 h-3.5" />
-                  <span>Canal Telefônico Direto</span>
+                  <span>Canais de Atendimento</span>
                 </div>
                 <p className="text-xs text-slate-300 leading-relaxed">
-                  Atendimento executivo nacional pelo telefone <strong>(91) 3266-5900</strong> e recepção presencial em São Paulo.
+                  WhatsApp / SP: <strong>(11) 96243-3641</strong> · Central: <strong>(91) 3266-5900</strong>. Atendimento presencial na Av. Paulista e remoto nacional.
                 </p>
               </div>
 

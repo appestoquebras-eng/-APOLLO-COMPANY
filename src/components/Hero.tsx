@@ -87,11 +87,20 @@ export const Hero: React.FC<HeroProps> = ({ onOpenConsultation, onExploreSolutio
             </div>
 
             {/* Contact quick reference */}
-            <div className="pt-2 flex items-center gap-3 text-xs text-slate-400">
+            <div className="pt-2 flex flex-wrap items-center gap-3 text-xs text-slate-400">
               <span>Atendimento Executivo:</span>
+              <a
+                href={`tel:${OFFICIAL_COMPANY_DATA.contato.telefoneSPClean}`}
+                className="text-amber-400 hover:text-amber-300 font-semibold tabular-nums transition-colors"
+                title="Atendimento São Paulo / WhatsApp"
+              >
+                {OFFICIAL_COMPANY_DATA.contato.telefoneSP} (SP)
+              </a>
+              <span className="text-slate-600" aria-hidden="true">·</span>
               <a
                 href={`tel:${OFFICIAL_COMPANY_DATA.contato.telefoneClean}`}
                 className="text-slate-200 hover:text-amber-400 font-medium tabular-nums transition-colors"
+                title="Central Telefônica"
               >
                 {OFFICIAL_COMPANY_DATA.contato.telefone}
               </a>

@@ -29,6 +29,8 @@ export interface CompanyData {
     email: string;
     telefone: string;
     telefoneClean: string;
+    telefoneSP: string;
+    telefoneSPClean: string;
   };
 }
 
@@ -110,6 +112,8 @@ export const OFFICIAL_COMPANY_DATA: CompanyData = {
     email: "LSSMELO@GMAIL.COM",
     telefone: "(91) 3266-5900",
     telefoneClean: "559132665900",
+    telefoneSP: "(11) 96243-3641",
+    telefoneSPClean: "5511962433641",
   },
 };
 
